@@ -249,7 +249,14 @@ const app = express();
       })
 
 
-         
+         app.get('/',(req,res)=>{ 
+             res.send(
+
+                console.log('server is running...!')
+             
+             )    
+                   
+         }) 
          
          app.listen(PORT,() =>{
             console.log(`server is running on Port: http://localhost:${PORT}/blogs`)
