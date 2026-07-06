@@ -4,5 +4,10 @@
     "express": "^5.2.1",
     "nodemon": "^3.1.14",
     "dev":"nodemon server.js"
-  }
+  },
+  "main": "server.js",
+"scripts": {
+  "start": "node server.js"
+  } 
+
 }

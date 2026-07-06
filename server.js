@@ -58,7 +58,7 @@ const app = express();
  app.use(cors({ 
       origin:"*",
       credentials:true,          
-      methods:['GET','POST','PUT',"PATCH","DELETE"]   
+      method:['GET','POST','PUT',"PATCH","DELETE"]   
    }))
 
    app.use(express.json());
@@ -124,9 +124,9 @@ const app = express();
 
   })
 
- app.get("/blogs",(req,res)=>{ 
-        res.send(`backend is running successfullly ${PORT}`)
- })
+//  app.get("/",(req,res)=>{ 
+//         res.send(`backend is running successfullly ${PORT}`)
+//  })
 
 
 // Post API 
