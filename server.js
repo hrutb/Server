@@ -53,6 +53,8 @@ const app = express();
 //         "http://127.0.0.1:5503",
 //         "http://localhost:5503"
 // ],
+
+
  app.use(cors({ 
       origin:"*",
       credentials:true,          
@@ -64,9 +66,7 @@ const app = express();
    // if we have query params q == 'rxjs' 
    // page =1 and limit == 20 
 
- app.get("/",(req,res)=>{ 
-        res.send(`backend is running successfullly ${PORT}`)
- })
+
 
    //GET API
   app.get('/blogs',(req,res)=>{ 
@@ -124,7 +124,9 @@ const app = express();
 
   })
 
-
+ app.get("/",(req,res)=>{ 
+        res.send(`backend is running successfullly ${PORT}`)
+ })
 
 
 // Post API 
