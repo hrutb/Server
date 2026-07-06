@@ -124,7 +124,7 @@ const app = express();
 
   })
 
- app.get("/",(req,res)=>{ 
+ app.get("/blogs",(req,res)=>{ 
         res.send(`backend is running successfullly ${PORT}`)
  })
 
