@@ -56,9 +56,9 @@ const app = express();
 
 
  app.use(cors({ 
-      origin:"*",
-      credentials:true,          
-      method:['GET','POST','PUT',"PATCH","DELETE"]   
+      origin:"http://127.0.0.1:5503",
+      // credentials:true,          
+      methods:['GET','POST','PUT',"PATCH","DELETE"]   
    }))
 
    app.use(express.json());
@@ -142,7 +142,7 @@ const app = express();
                  })
             }  
                       
-               let   newObj={ 
+               let newObj={ 
                        title,
                        item,  
                        author:author || 'Anonymous',
