@@ -1,7 +1,7 @@
 
 
 
-let blogs = [ 
+const blogs = [ 
           { 
              id:'1',
              title:'Angular',
@@ -92,27 +92,22 @@ const app = express();
 
 
   app.get('/blogs/:id',(req,res)=>{
-       try{
             const id = Number(req.params.id);
             const blog = blogs.find((b)=> b.id==id);
+       try{
 
-         if(!blog){ 
-                 //we used return here  beacuse if we get error it will never execute  next line code   
-        
-            return res.status(404).json({ 
-                status:false ,
-                message:`Blog with id ${id} is not found`
+          if(!blog){ 
+             //we used return here  beacuse if we get error it will never execute  next line code   
+             res.status(200).json({ 
+                 status:true,
+                 data:blog
+               })  
+               
+               return res.status(404).json({ 
+                   status:false ,
+                   message:`Blog with id ${id} is not found`
              })
-
-
-         }
-  
-        res.status(200).json({ 
-            status:true,
-            data:blog
-          })  
-
-
+          }
        }catch(err){ 
               res.status(500).json({
                  success:false ,
