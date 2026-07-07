@@ -94,15 +94,16 @@ const app = express();
   app.get('/blogs/:id',(req,res)=>{
             const id = Number(req.params.id);
             const blog = blogs.find((b)=> b.id==id);
-       try{
-
-          if(!blog){ 
-             //we used return here  beacuse if we get error it will never execute  next line code   
+       try{ 
              res.status(200).json({ 
                  status:true,
                  data:blog
                })  
                
+
+          if(!blog){ 
+             //we used return here  beacuse if we get error it will never execute  next line code   
+           
                return res.status(404).json({ 
                    status:false ,
                    message:`Blog with id ${id} is not found`
@@ -246,13 +247,12 @@ const app = express();
 
          app.get('/',(req,res)=>{ 
              res.send(
-
                 console.log('server is running...!')
-             
-             )    
-                   
+               )   
          }) 
-         
+          
+
+
          app.listen(PORT,() =>{
             console.log(`server is running on Port: http://localhost:${PORT}/blogs`)
            })
